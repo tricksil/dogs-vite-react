@@ -15,7 +15,7 @@ import NotFound from './components/NotFound';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="dogs-vite-react">
         <UserStorage>
           <Header />
           <main className="AppBody">
