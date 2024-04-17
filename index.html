@@ -10,10 +10,10 @@
   <title>Dogs</title>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-      if (location.pathname !== '/') {
+      if (location.pathname !== '/dogs-vite-react/') {
         // Redirect to home page, then let the SPA router take over
         window.history.replaceState({}, '', '/#' + location.pathname.slice(1));
-        location.replace('/');
+        location.replace('/dogs-vite-react/');
       }
     });
   </script>
