@@ -9,23 +9,13 @@
   <meta name="description" content="Dogs - Rede social para cachorros." />
   <title>Dogs</title>
   <script type="text/javascript">
-    var pathSegmentsToKeep = 1;
-
-    var l = window.location;
-    l.replace(
-      l.protocol +
-      "//" +
-      l.hostname +
-      (l.port ? ":" + l.port : "") +
-      l.pathname
-        .split("/")
-        .slice(0, 1 + pathSegmentsToKeep)
-        .join("/") +
-      "/?/" +
-      l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
-      (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-      l.hash
-    );
+    document.addEventListener('DOMContentLoaded', function () {
+      if (location.pathname !== '/') {
+        // Redirect to home page, then let the SPA router take over
+        window.history.replaceState({}, '', '/#' + location.pathname.slice(1));
+        location.replace('/');
+      }
+    });
   </script>
   <script type="module" crossorigin src="/dogs-vite-react/assets/index-JERgHQhz.js"></script>
   <link rel="stylesheet" crossorigin href="/dogs-vite-react/assets/index-DKgpKt0Z.css">
