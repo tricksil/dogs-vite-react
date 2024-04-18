@@ -6,4 +6,7 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   base: '/dogs-vite-react/',
   plugins: [react(), svgr()],
+  server: {
+    historyApiFallback: true,
+  },
 });
